@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Edit "{{ game['name'] }}" {% endblock %}</h1>
+    <form method="post">
+        <label for="name">Name</label><br>
+        <input type="text" name="name" placeholder="Game name" value="{{ game['name'] }}" required><br>
+
+        <label for="price">Price</label><br>
+        <input type="number" step="0.01" name="price" placeholder="Game price" value="{{ game['price'] }}" required><br>
+
+        <label for="rate">Rating (1-5)</label><br>
+        <input type="number" name="rate" min="1" max="5" placeholder="Game rating" value="{{ game['rate'] }}" required><br>
+
+        <button type="submit">Save</button>
+    </form>
+{% endblock %} 
